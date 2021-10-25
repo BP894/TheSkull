@@ -37,13 +37,8 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit hitResult;
         if(Physics.Raycast(ray, out hitResult))
         {
-            Debug.Log("¸¶¿ì½º ÂïÈû");
             Vector3 mouseDir = new Vector3(hitResult.point.x, transform.position.y, hitResult.point.z) - transform.position;
             playerAnimator.transform.forward = mouseDir;
-        }
-        else
-        {
-            Debug.Log("¾È ÂïÈû");
         }
     }
 }
