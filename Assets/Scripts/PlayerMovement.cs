@@ -10,24 +10,40 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     private Rigidbody playerRigidbody;
     private Animator playerAnimator;
-
+    private Camera playerCamera;
     // Start is called before the first frame update
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
+        playerCamera = GetComponentInChildren<Camera>();
     }
     private void FixedUpdate()
     {
         Move();
-        playerAnimator.SetFloat("Y", playerInput.move);
-        playerAnimator.SetFloat("X", playerInput.rotate);
+        LookMouseCursor();
     }
     private void Move()
     {
         Vector3 moveDistance = ((playerInput.move * transform.forward) + (playerInput.rotate * transform.right)) * Time.deltaTime * moveSpeed;
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
-        
+        playerAnimator.SetFloat("Y", playerInput.move);
+        playerAnimator.SetFloat("X", playerInput.rotate);
+    }
+    void LookMouseCursor()
+    {
+        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hitResult;
+        if(Physics.Raycast(ray, out hitResult))
+        {
+            Debug.Log("¸¶¿ì½º ÂïÈû");
+            Vector3 mouseDir = new Vector3(hitResult.point.x, transform.position.y, hitResult.point.z) - transform.position;
+            playerAnimator.transform.forward = mouseDir;
+        }
+        else
+        {
+            Debug.Log("¾È ÂïÈû");
+        }
     }
 }
