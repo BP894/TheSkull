@@ -26,7 +26,7 @@ public class Gun : MonoBehaviour
     public int magCapacity = 25;
     public int magAmmo;
 
-    public float timeBetFire = 10.0f;
+    public float timeBetFire = 0.3f;
     public float reloadTime = 0.3f;
     private float lastFireTime;
 
