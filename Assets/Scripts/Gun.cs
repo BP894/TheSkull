@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
     public int magAmmo;
 
     public float timeBetFire = 10.0f;
-    public float reloadTime = 1.8f;
+    public float reloadTime = 0.3f;
     private float lastFireTime;
 
     private void Awake()
@@ -37,6 +37,14 @@ public class Gun : MonoBehaviour
 
         bulletLineRender.positionCount = 2;
         bulletLineRender.enabled = false;
+        if(this.gameObject.tag != "M1911")
+        {
+            this.gameObject.SetActive(false);
+        }
+        else
+        {
+            this.gameObject.SetActive(true);
+        }
     }
     private void OnEnable()
     {
