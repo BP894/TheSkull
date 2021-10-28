@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        //LookMouseCursor();
+        LookMouseCursor();
     }
     private void Move()
     {

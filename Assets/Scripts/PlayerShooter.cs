@@ -50,7 +50,7 @@ public class PlayerShooter : MonoBehaviour
     }
     private void OnAnimatorIK(int layerIndex)
     {
-        gunPivot.position = playerAnimator.GetIKHintPosition(AvatarIKHint.RightElbow);
+        //gunPivot.position = playerAnimator.GetIKHintPosition(AvatarIKHint.RightElbow);
 
         //IK를 이용하여 왼손의 위치와 회전을 총의 왼쪽 손잡이에 맞춤.
         playerAnimator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f); // 가중치 100%
