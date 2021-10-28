@@ -18,7 +18,7 @@ public class Gun : MonoBehaviour
     private AudioSource gunAudioPlayer;
     public AudioClip shotClip;
     public AudioClip reloadClip;
-
+    public PlayerShooter playerShooter;
     public float damage = 25;
     private float fireDistance = 50f;
 
@@ -34,17 +34,10 @@ public class Gun : MonoBehaviour
     {
         gunAudioPlayer = GetComponent<AudioSource>();
         bulletLineRender = GetComponent<LineRenderer>();
+        playerShooter = GetComponent<PlayerShooter>();
 
         bulletLineRender.positionCount = 2;
         bulletLineRender.enabled = false;
-        if(this.gameObject.tag != "M1911")
-        {
-            this.gameObject.SetActive(false);
-        }
-        else
-        {
-            this.gameObject.SetActive(true);
-        }
     }
     private void OnEnable()
     {
