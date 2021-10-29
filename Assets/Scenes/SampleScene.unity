@@ -3491,6 +3491,10 @@ PrefabInstance:
       value: -0.17335865
       objectReference: {fileID: 0}
     - target: {fileID: 1191192103, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: hitClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8432ee32af4fd1d49ba7a6946ed0fa9f, type: 3}
+    - target: {fileID: 1191192103, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1934445982}
@@ -3637,8 +3641,6 @@ MonoBehaviour:
   healthMin: 100
   speedMax: 1
   speedMin: 0.4
-  time: 0
-  score: 0
   strongSkeletonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &2077651534
 Transform:
