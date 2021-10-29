@@ -29,9 +29,9 @@ public class UIManager : MonoBehaviour
         ammoText.text = magAmmo + " / " + remainAmmo;
         ammoText.color = textColor;
     }
-    public void UpdateScoreText(int newScore)
+    public void UpdateScoreText(float newScore)
     {
-        scoreText.text = "Score : " + newScore;
+        scoreText.text = "Score : " + string.Format("{0:N1}", newScore);
     }
     public void UpdateWaveText(int waves, int count)
     {
