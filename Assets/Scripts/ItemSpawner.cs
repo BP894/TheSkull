@@ -34,7 +34,7 @@ public class ItemSpawner : MonoBehaviour
     {
         Vector3 spawnPosition =
             GetRandomPointOnNavMesh(playerTransform.position, maxDistance);
-        spawnPosition += Vector3.up * 0.5f;
+        spawnPosition += Vector3.up * 1.0f;
 
         GameObject selectedItem = items[Random.Range(0, items.Length)];
         GameObject item = Instantiate(selectedItem, spawnPosition, Quaternion.identity);
