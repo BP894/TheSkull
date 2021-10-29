@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9cc4028b00e55984388823d8dc3d87af
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Coves
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a93ea0b80ffb38448b77a68c1825b17a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

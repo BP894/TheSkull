@@ -24,10 +24,19 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
+        if(GameManager.instance != null && GameManager.instance.isGameOver)
+        {
+            return;
+        }
         if(skeletons.Count <= 0)
         {
             SpawnWave();
         }
+        UpdateUI();
+    }
+    private void UpdateUI()
+    {
+        UIManager.instance.UpdateWaveText(wave, skeletons.Count);
     }
     private void SpawnWave()
     {

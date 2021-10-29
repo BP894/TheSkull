@@ -47,6 +47,26 @@ public class PlayerShooter : MonoBehaviour
                 playerAnimator.SetTrigger("Reload");
             }
         }
+        UpdateUI();
+    }
+    private void UpdateUI()
+    {
+        if(gun != null && UIManager.instance != null)
+        {
+            switch(gunNumber)
+            {
+                case 1:
+                    UIManager.instance.UpdateAmmoText(gun[gunNumber].magAmmo, gun[gunNumber].ammoRemain, Color.red);
+                    break;
+                case 2:
+                    UIManager.instance.UpdateAmmoText(gun[gunNumber].magAmmo, gun[gunNumber].ammoRemain, Color.cyan);
+                    break;
+                case 3:
+                    UIManager.instance.UpdateAmmoText(gun[gunNumber].magAmmo, gun[gunNumber].ammoRemain, Color.yellow);
+                    break;
+            }
+            
+        }
     }
     private void OnAnimatorIK(int layerIndex)
     {
