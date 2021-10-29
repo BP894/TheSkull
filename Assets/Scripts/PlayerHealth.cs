@@ -47,7 +47,7 @@ public class PlayerHealth : LifeEntity
         // LivingEntity의 RestoreHealth() 실행 (체력 증가)
         base.RestoreHealth(newHealth);
         healthSlider.value = health; // 갱신된 체력으로 체력 슬라이더 갱신
-        healthText.text = health + "  /  " + startingHealth;
+        healthText.text = Mathf.Floor(health) + "  /  " + startingHealth;
     }
 
     // 데미지 처리

@@ -38,9 +38,12 @@ public class LifeEntity : MonoBehaviour, IDamageable
             // 이미 사망한 경우 체력을 회복할 수 없음
             return;
         }
-
         // 체력 추가
         health += newHealth;
+        if(health >= 100f)
+        {
+            health = 100f;
+        }
     }
 
     // 사망 처리

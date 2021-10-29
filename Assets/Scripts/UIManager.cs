@@ -45,7 +45,8 @@ public class UIManager : MonoBehaviour
     }
     public void SetActiveGameoverUI(bool active)
     {
-        gameoverUI.SetActive(active);
+        //gameoverUI.SetActive(active);
+        
     }
     public void GameRestart()
     {
