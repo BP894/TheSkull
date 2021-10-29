@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         }
     }
     private static GameManager m_instance;
-    private int score = 0;
+    private float score = 0;
     public bool isGameOver { get; private set; }
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     {
         FindObjectOfType<PlayerHealth>().onDeath += EndGame;
     }
-    public void AddScore(int newScore)
+    public void AddScore(float newScore)
     {
         if(!isGameOver)
         {

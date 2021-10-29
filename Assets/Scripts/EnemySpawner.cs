@@ -17,8 +17,6 @@ public class EnemySpawner : MonoBehaviour
     public float speedMax = 1f;
     public float speedMin = 0.4f;
 
-    public float time = 0f;
-    public float score = 0f;
     public Color strongSkeletonColor = Color.red;
 
     private List<Skeleton> skeletons = new List<Skeleton>();
@@ -38,10 +36,7 @@ public class EnemySpawner : MonoBehaviour
     }
     private void UpdateUI()
     {
-        time += Time.deltaTime;
-        score = wave * time;
         UIManager.instance.UpdateWaveText(wave, skeletons.Count);
-        UIManager.instance.UpdateScoreText(score);
     }
     private void SpawnWave()
     {
@@ -68,5 +63,7 @@ public class EnemySpawner : MonoBehaviour
 
         skeleton.onDeath += () => skeletons.Remove(skeleton);
         skeleton.onDeath += () => Destroy(skeleton.gameObject, 10f);
+        skeleton.onDeath += () => GameManager.instance.AddScore(100 * intensity);
+        
     }
 }
