@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     public Text scoreText;
     public Text waveText;
     public GameObject[] gunImage;
-    public GameObject gameoverUI;
+    public GameObject gameManager;
 
     private int gunNumber = 3;
 
@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
     {
         //gameoverUI.SetActive(active);
         SceneManager.LoadScene(2);
+        DontDestroyOnLoad(gameManager);
     }
     public void GameRestart()
     {

@@ -250,7 +250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 499, y: 312}
+  m_AnchoredPosition: {x: 452, y: 312}
   m_SizeDelta: {x: 1280, y: 39.9232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851851057
@@ -378,6 +378,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2105325936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4140141177341721799, guid: c92226be23221fe4a9a62ca66f6d4b0a, type: 3}
+  m_PrefabInstance: {fileID: 4139350371460859671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2105325937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105325936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9499f0558d643ed4ca00221e3b683fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 851851057}
 --- !u!224 &224895697092735964 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4210602089370858699, guid: c92226be23221fe4a9a62ca66f6d4b0a, type: 3}
@@ -411,8 +429,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4099473243192839171, guid: c92226be23221fe4a9a62ca66f6d4b0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2105325937}
+    - target: {fileID: 4099473243192839171, guid: c92226be23221fe4a9a62ca66f6d4b0a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099473243192839171, guid: c92226be23221fe4a9a62ca66f6d4b0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnToTitle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099473243192839171, guid: c92226be23221fe4a9a62ca66f6d4b0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EndSceneWork, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099473243192839171, guid: c92226be23221fe4a9a62ca66f6d4b0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4099648639620676057, guid: c92226be23221fe4a9a62ca66f6d4b0a, type: 3}
       propertyPath: m_Text
