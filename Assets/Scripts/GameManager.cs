@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         }
     }
     private static GameManager m_instance;
-    private float score = 0;
+    public float score = 0;
     public bool isGameOver { get; private set; }
     private void Awake()
     {
@@ -40,6 +40,6 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         isGameOver = true;
-        UIManager.instance.SetActiveGameoverUI(true);
+        UIManager.instance.GoToGameoverScene();
     }
 }

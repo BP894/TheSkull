@@ -43,10 +43,10 @@ public class UIManager : MonoBehaviour
     {
         waveText.text = "Wave : " + waves + "\nEnemy Left : " + count;
     }
-    public void SetActiveGameoverUI(bool active)
+    public void GoToGameoverScene()
     {
         //gameoverUI.SetActive(active);
-        
+        SceneManager.LoadScene(2);
     }
     public void GameRestart()
     {
