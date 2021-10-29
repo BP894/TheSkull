@@ -47,11 +47,10 @@ public class Skeleton : LifeEntity
         health = newHealth;
         damage = newDamage;
         pathFinder.speed = newSpeed;
-        for(int i = 0; i <= skeletonRenderers.Length; i++)
+        for (int i = 0; i < skeletonRenderers.Length; i++)
         {
             skeletonRenderers[i].material.color = skinColor;
         }
-        
     }
     private void Start()
     {
@@ -108,7 +107,6 @@ public class Skeleton : LifeEntity
         pathFinder.enabled = false;
         skeletonAnimator.SetTrigger("Die");
         skeletonAudioPlayer.PlayOneShot(deathSound);
-        Destroy(gameObject, 5f);
     }
     private void OnTriggerStay(Collider other)
     {
