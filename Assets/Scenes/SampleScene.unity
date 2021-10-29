@@ -296,7 +296,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50369932}
-  m_LocalRotation: {x: 0.41852477, y: 0.34116477, z: -0.17335865, w: 0.8236446}
+  m_LocalRotation: {x: 0.41852477, y: 0.3411648, z: -0.17335865, w: 0.82364464}
   m_LocalPosition: {x: 77.45, y: 18.16, z: 42.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3301,13 +3301,65 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 128502133, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 128502133, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: ammoRemain
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 128502133, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: magCapacity
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 128502133, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: timeBetFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 197721272, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 197721272, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: ammoRemain
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 197721272, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: reloadTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 197721272, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: magCapacity
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 632089470, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 632089470, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: ammoRemain
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 632089470, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: reloadTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 632089470, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: magCapacity
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 632089470, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: timeBetFire
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 847088929, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 847088929, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8236446
+      value: 0.82364464
       objectReference: {fileID: 0}
     - target: {fileID: 847088929, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3315,7 +3367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 847088929, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.34116477
+      value: 0.3411648
       objectReference: {fileID: 0}
     - target: {fileID: 847088929, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: m_LocalRotation.z
