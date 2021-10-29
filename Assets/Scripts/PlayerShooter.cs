@@ -56,13 +56,13 @@ public class PlayerShooter : MonoBehaviour
             switch(gunNumber)
             {
                 case 1:
-                    UIManager.instance.UpdateAmmoText(gun[gunNumber].magAmmo, gun[gunNumber].ammoRemain, Color.red);
+                    UIManager.instance.UpdateAmmoText(gun[gunNumber].magAmmo, gun[gunNumber].ammoRemain, Color.red, gunNumber);
                     break;
                 case 2:
-                    UIManager.instance.UpdateAmmoText(gun[gunNumber].magAmmo, gun[gunNumber].ammoRemain, Color.cyan);
+                    UIManager.instance.UpdateAmmoText(gun[gunNumber].magAmmo, gun[gunNumber].ammoRemain, Color.cyan, gunNumber);
                     break;
                 case 3:
-                    UIManager.instance.UpdateAmmoText(gun[gunNumber].magAmmo, gun[gunNumber].ammoRemain, Color.yellow);
+                    UIManager.instance.UpdateAmmoText(gun[gunNumber].magAmmo, gun[gunNumber].ammoRemain, Color.yellow, gunNumber);
                     break;
             }
             

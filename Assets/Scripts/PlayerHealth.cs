@@ -60,7 +60,7 @@ public class PlayerHealth : LifeEntity
         // LivingEntity의 Die() 실행(사망 적용)
         base.Die();
         healthSlider.gameObject.SetActive(false); // 체력 슬라이더 비활성화
-        playerAudioPlayer.PlayOneShot(deathClip); // 사망음 재생
+        //playerAudioPlayer.PlayOneShot(deathClip); // 사망음 재생
         playerAnimator.SetTrigger("Die"); // 사망 애니메이션 재생
         playerMovement.enabled = false; // 플레이어 조작을 받는 컴포넌트 비활성화
         playerShooter.enabled = false;

@@ -22,12 +22,18 @@ public class UIManager : MonoBehaviour
     public Text ammoText;
     public Text scoreText;
     public Text waveText;
+    public GameObject[] gunImage;
     public GameObject gameoverUI;
 
-    public void UpdateAmmoText(int magAmmo, int remainAmmo, Color textColor)
+    private int gunNumber = 3;
+
+    public void UpdateAmmoText(int magAmmo, int remainAmmo, Color textColor, int number)
     {
         ammoText.text = magAmmo + " / " + remainAmmo;
         ammoText.color = textColor;
+        gunImage[gunNumber].SetActive(false);
+        gunNumber = number;
+        gunImage[gunNumber].SetActive(true);
     }
     public void UpdateScoreText(float newScore)
     {
