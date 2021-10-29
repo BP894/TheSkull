@@ -296,7 +296,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50369932}
-  m_LocalRotation: {x: 0.41852477, y: 0.3411648, z: -0.17335865, w: 0.82364464}
+  m_LocalRotation: {x: 0.41852477, y: 0.34116477, z: -0.17335865, w: 0.8236446}
   m_LocalPosition: {x: 77.45, y: 18.16, z: 42.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3301,6 +3301,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 128502130, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.076
+      objectReference: {fileID: 0}
     - target: {fileID: 128502133, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: damage
       value: 30
@@ -3323,7 +3327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 197721272, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: ammoRemain
-      value: 48
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 197721272, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: reloadTime
@@ -3333,9 +3337,13 @@ PrefabInstance:
       propertyPath: magCapacity
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 197721273, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 632089470, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: damage
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 632089470, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: ammoRemain
@@ -3353,13 +3361,17 @@ PrefabInstance:
       propertyPath: timeBetFire
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 632089473, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.056
+      objectReference: {fileID: 0}
     - target: {fileID: 847088929, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 847088929, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.82364464
+      value: 0.8236446
       objectReference: {fileID: 0}
     - target: {fileID: 847088929, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3367,7 +3379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 847088929, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.3411648
+      value: 0.34116477
       objectReference: {fileID: 0}
     - target: {fileID: 847088929, guid: bcb6817902dd7d34cacbd336a221664f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3476,6 +3488,8 @@ MonoBehaviour:
   healthMin: 100
   speedMax: 1
   speedMin: 0.4
+  time: 0
+  score: 0
   strongSkeletonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &2077651534
 Transform:
