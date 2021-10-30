@@ -83,6 +83,7 @@ public class MenhirStone : MonoBehaviour
         switch (buffNumber)
         {
             case 1:
+                StartCoroutine(SpeedUp(cs));
                 yield return new WaitForSeconds(15f);
                 break;
             case 2:
@@ -126,5 +127,17 @@ public class MenhirStone : MonoBehaviour
 
         playerMaterial.SetFloat("_Metallic", 0.0f);
         life.mode = true;
+    }
+    IEnumerator SpeedUp(Collision c)
+    {
+        PlayerMovement playerMovement = c.gameObject.GetComponent<PlayerMovement>();
+        Gun playerGun = c.gameObject.GetComponentInChildren<Gun>();
+        
+        playerMovement.moveSpeed *= 1.5f;
+        playerGun.timeBetFire /= 1.5f;
+        yield return new WaitForSeconds(15.0f);
+
+        playerMovement.moveSpeed /= 1.5f;
+        playerGun.timeBetFire *= 1.5f;
     }
 }
