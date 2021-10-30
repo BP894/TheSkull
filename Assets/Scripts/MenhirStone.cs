@@ -9,8 +9,10 @@ public class MenhirStone : MonoBehaviour
     private Color decalColor;
     private Color decakEmissionColor;
 
-    public GameObject[] buffImage;
+    GameObject[] buffImage;
     public GameObject buffText;
+    public GameObject border;
+    GameObject name;
     enum State
     {
         Rest,
@@ -21,6 +23,7 @@ public class MenhirStone : MonoBehaviour
     private float lastBlessTime;
     private float timeBetBless;
     private int count;
+
     private void Awake()
     {
         stoneRenderers = GetComponentsInChildren<MeshRenderer>();
@@ -30,6 +33,7 @@ public class MenhirStone : MonoBehaviour
         state = State.Rest;
         timeBetBless = Random.Range(10f, 20f);
         lastBlessTime = 0f;
+        buffImage = new GameObject[border.transform.childCount];
     }
     private void Start()
     {
@@ -38,10 +42,15 @@ public class MenhirStone : MonoBehaviour
             stoneRenderers[i].material.SetColor("_DecalsColor", Color.black);
             stoneRenderers[i].material.SetColor("_DecakEmissionColor", Color.black);
         }
+        for (int i = 0; i < border.transform.childCount; i++)
+        {
+            buffImage[i] = border.transform.GetChild(i).gameObject;
+        }
     }
     private void Update()
     {
         SetStoneAbility();
+        
     }
     private void SetStoneAbility()
     {
@@ -60,7 +69,7 @@ public class MenhirStone : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (state == State.Ready)
+        if (state == State.Ready && buffImage[0].activeSelf)
         {
             lastBlessTime = Time.time;
             timeBetBless = Random.Range(10f, 20f);
@@ -75,25 +84,29 @@ public class MenhirStone : MonoBehaviour
     }
     IEnumerator Buff(Collision cs)
     {
-        int buffNumber = Random.Range(2, 3);
+        int buffNumber = Random.Range(1, 4);
 
         buffImage[0].SetActive(false);
         buffImage[buffNumber].SetActive(true);
         switch (buffNumber)
         {
             case 1:
+                StartCoroutine(SpeedUpText());
                 StartCoroutine(SpeedUp(cs));
                 yield return new WaitForSeconds(15f);
+
                 break;
             case 2:
                 StartCoroutine(GodModeText());
                 StartCoroutine(GodMode(cs));
                 yield return new WaitForSeconds(5f);
+
                 break;
             case 3:
                 StartCoroutine(HealText());
                 StartCoroutine(Heal(cs));
                 yield return new WaitForSeconds(10f);
+
                 break;
         }
 
@@ -111,6 +124,7 @@ public class MenhirStone : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
             while (totalHealMount < 10)
             {
+
                 life.RestoreHealth(health);
                 totalHealMount += health;
                 yield return new WaitForSeconds(1.0f);
@@ -132,10 +146,10 @@ public class MenhirStone : MonoBehaviour
         Material playerMaterial = c.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material;
         LifeEntity life = c.gameObject.GetComponent<LifeEntity>();
 
+
         playerMaterial.SetFloat("_Metallic", 1.0f);
         life.mode = false;
         yield return new WaitForSeconds(5.0f);
-
         playerMaterial.SetFloat("_Metallic", 0.0f);
         life.mode = true;
     }
@@ -153,7 +167,8 @@ public class MenhirStone : MonoBehaviour
     {
         PlayerMovement playerMovement = c.gameObject.GetComponent<PlayerMovement>();
         Gun playerGun = c.gameObject.GetComponentInChildren<Gun>();
-        
+
+
         playerMovement.moveSpeed *= 1.5f;
         playerGun.timeBetFire /= 1.5f;
 
@@ -161,5 +176,15 @@ public class MenhirStone : MonoBehaviour
 
         playerMovement.moveSpeed /= 1.5f;
         playerGun.timeBetFire *= 1.5f;
+    }
+    IEnumerator SpeedUpText()
+    {
+        buffText.GetComponent<Text>().text = "당신에게 속도의 축복이 내립니다...";
+        buffText.SetActive(true);
+
+        yield return new WaitForSeconds(3.5f);
+
+        buffText.GetComponent<Text>().text = "";
+        buffText.SetActive(false);
     }
 }
