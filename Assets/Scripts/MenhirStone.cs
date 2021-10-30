@@ -84,7 +84,7 @@ public class MenhirStone : MonoBehaviour
     }
     IEnumerator Buff(Collision cs)
     {
-        int buffNumber = Random.Range(1, 2);
+        int buffNumber = Random.Range(1, 4);
 
         buffImage[0].SetActive(false);
         buffImage[buffNumber].SetActive(true);
