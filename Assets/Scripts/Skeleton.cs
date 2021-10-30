@@ -113,7 +113,7 @@ public class Skeleton : LifeEntity
         if (!dead && Time.time >= lastAttackTime + timeBetAttack)
         {
             LifeEntity attackTarget = other.GetComponent<LifeEntity>();
-            if(attackTarget != null && attackTarget ==  targetEntity)
+            if(attackTarget != null && attackTarget ==  targetEntity && attackTarget.mode)
             {
                 lastAttackTime = Time.time;
                 Vector3 hitPoint = other.ClosestPoint(transform.position);

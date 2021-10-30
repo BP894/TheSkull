@@ -8,9 +8,11 @@ public class LifeEntity : MonoBehaviour, IDamageable
     public float startingHealth = 100f; 
     public float health { get; protected set; } 
     public bool dead { get; protected set; }
+    public bool mode { get; set; }
     public event Action onDeath;
     protected virtual void OnEnable()
     {
+        mode = true;
         // 사망하지 않은 상태로 시작
         dead = false;
         // 체력을 시작 체력으로 초기화
