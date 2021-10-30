@@ -84,7 +84,7 @@ public class MenhirStone : MonoBehaviour
     }
     IEnumerator Buff(Collision cs)
     {
-        int buffNumber = Random.Range(1, 4);
+        int buffNumber = Random.Range(1, 2);
 
         buffImage[0].SetActive(false);
         buffImage[buffNumber].SetActive(true);
@@ -166,16 +166,24 @@ public class MenhirStone : MonoBehaviour
     IEnumerator SpeedUp(Collision c)
     {
         PlayerMovement playerMovement = c.gameObject.GetComponent<PlayerMovement>();
-        Gun playerGun = c.gameObject.GetComponentInChildren<Gun>();
+        //Gun playerGun = c.gameObject.GetComponentInChildren<Gun>();
+        Transform gunPivot = GameObject.Find("Gun Pivot").transform;
 
-
+        for (int i = 0; i < gunPivot.childCount; i++)
+        {
+            gunPivot.GetChild(i).gameObject.GetComponent<Gun>().timeBetFire /= 1.5f;
+        }
         playerMovement.moveSpeed *= 1.5f;
-        playerGun.timeBetFire /= 1.5f;
+        //playerGun.timeBetFire /= 1.5f;
 
         yield return new WaitForSeconds(15.0f);
 
+        for (int i = 0; i < gunPivot.childCount; i++)
+        {
+            gunPivot.GetChild(i).gameObject.GetComponent<Gun>().timeBetFire *= 1.5f;
+        }
         playerMovement.moveSpeed /= 1.5f;
-        playerGun.timeBetFire *= 1.5f;
+        //playerGun.timeBetFire *= 1.5f;
     }
     IEnumerator SpeedUpText()
     {
