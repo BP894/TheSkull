@@ -70,13 +70,12 @@ public class MenhirStone : MonoBehaviour
                 stoneRenderers[i].material.SetColor("_DecalsColor", Color.black);
                 stoneRenderers[i].material.SetColor("_DecakEmissionColor", Color.black);
             }
-            Debug.Log("이로운 효과!");
             StartCoroutine(Buff(collision));
         }
     }
     IEnumerator Buff(Collision cs)
     {
-        int buffNumber = Random.Range(1, 2);
+        int buffNumber = Random.Range(1, 4);
 
         buffImage[0].SetActive(false);
         buffImage[buffNumber].SetActive(true);
@@ -135,6 +134,7 @@ public class MenhirStone : MonoBehaviour
         
         playerMovement.moveSpeed *= 1.5f;
         playerGun.timeBetFire /= 1.5f;
+
         yield return new WaitForSeconds(15.0f);
 
         playerMovement.moveSpeed /= 1.5f;
