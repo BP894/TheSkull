@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     }
     private static GameManager m_instance;
     public float score = 0;
+
     public bool isGameOver { get; private set; }
     private void Awake()
     {

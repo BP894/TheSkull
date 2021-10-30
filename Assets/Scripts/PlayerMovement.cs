@@ -41,12 +41,5 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.transform.forward = mouseDir;
         }
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    IItem item = other.GetComponent<IItem>();
-    //    if (item != null)
-    //    {
-    //        item.Use(gameObject);
-    //    }
-    //}
+    
 }

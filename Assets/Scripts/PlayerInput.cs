@@ -12,6 +12,9 @@ public class PlayerInput : MonoBehaviour
     public float rotate { get; private set; }
     public bool fire { get; private set; }
     public bool reload { get; private set; }
+    public bool keynum1 { get; private set; }
+    public bool keynum2 { get; private set; }
+    public bool keynum3 { get; private set; }
     // Update is called once per frame
     void Update()
     {
@@ -19,5 +22,8 @@ public class PlayerInput : MonoBehaviour
         rotate = Input.GetAxis(rotateAxisName);
         fire = Input.GetButton(fireButtonName);
         reload = Input.GetButton(reloadButtonName);
+        keynum1 = Input.GetKeyDown(KeyCode.Keypad1);
+        keynum2 = Input.GetKeyDown(KeyCode.Keypad2);
+        keynum3 = Input.GetKeyDown(KeyCode.Keypad3);
     }
 }
