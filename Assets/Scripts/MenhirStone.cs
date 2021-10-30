@@ -10,7 +10,7 @@ public class MenhirStone : MonoBehaviour
     private Color decakEmissionColor;
 
     public GameObject[] buffImage;
-
+    public GameObject buffText;
     enum State
     {
         Rest,
@@ -75,7 +75,7 @@ public class MenhirStone : MonoBehaviour
     }
     IEnumerator Buff(Collision cs)
     {
-        int buffNumber = Random.Range(1, 4);
+        int buffNumber = Random.Range(3, 4);
 
         buffImage[0].SetActive(false);
         buffImage[buffNumber].SetActive(true);
@@ -90,6 +90,7 @@ public class MenhirStone : MonoBehaviour
                 yield return new WaitForSeconds(5f);
                 break;
             case 3:
+                StartCoroutine(HealText());
                 StartCoroutine(Heal(cs));
                 yield return new WaitForSeconds(10f);
                 break;
@@ -114,6 +115,16 @@ public class MenhirStone : MonoBehaviour
                 yield return new WaitForSeconds(1.0f);
             }
         }
+    }
+    IEnumerator HealText()
+    {
+        buffText.GetComponent<Text>().text = "당신에게 회복의 축복이 내립니다...";
+        buffText.SetActive(true);
+
+        yield return new WaitForSeconds(3.5f);
+
+        buffText.GetComponent<Text>().text = "";
+        buffText.SetActive(false);
     }
     IEnumerator GodMode(Collision c)
     {
