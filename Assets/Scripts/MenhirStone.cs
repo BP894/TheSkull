@@ -12,7 +12,11 @@ public class MenhirStone : MonoBehaviour
     GameObject[] buffImage;
     public GameObject buffText;
     public GameObject border;
-    GameObject name;
+
+    private AudioSource stoneAudioPlayer;
+    public AudioClip enableSound;
+    public AudioClip disableSound;
+
     enum State
     {
         Rest,
@@ -29,6 +33,7 @@ public class MenhirStone : MonoBehaviour
         stoneRenderers = GetComponentsInChildren<MeshRenderer>();
         decalColor = stoneRenderers[0].material.GetColor("_DecalsColor");
         decakEmissionColor = stoneRenderers[0].material.GetColor("_DecakEmissionColor");
+        stoneAudioPlayer = GetComponent<AudioSource>();
 
         state = State.Rest;
         timeBetBless = Random.Range(10f, 20f);
@@ -63,6 +68,7 @@ public class MenhirStone : MonoBehaviour
                 {
                     stoneRenderers[i].material.SetColor("_DecalsColor", decalColor);
                     stoneRenderers[i].material.SetColor("_DecakEmissionColor", decakEmissionColor);
+                    stoneAudioPlayer.PlayOneShot(enableSound);
                 }
             }
         }
@@ -78,6 +84,7 @@ public class MenhirStone : MonoBehaviour
             {
                 stoneRenderers[i].material.SetColor("_DecalsColor", Color.black);
                 stoneRenderers[i].material.SetColor("_DecakEmissionColor", Color.black);
+                stoneAudioPlayer.PlayOneShot(disableSound);
             }
             StartCoroutine(Buff(collision));
         }
@@ -124,7 +131,6 @@ public class MenhirStone : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
             while (totalHealMount < 10)
             {
-
                 life.RestoreHealth(health);
                 totalHealMount += health;
                 yield return new WaitForSeconds(1.0f);
