@@ -75,7 +75,7 @@ public class MenhirStone : MonoBehaviour
     }
     IEnumerator Buff(Collision cs)
     {
-        int buffNumber = Random.Range(3, 4);
+        int buffNumber = Random.Range(2, 3);
 
         buffImage[0].SetActive(false);
         buffImage[buffNumber].SetActive(true);
@@ -86,6 +86,7 @@ public class MenhirStone : MonoBehaviour
                 yield return new WaitForSeconds(15f);
                 break;
             case 2:
+                StartCoroutine(GodModeText());
                 StartCoroutine(GodMode(cs));
                 yield return new WaitForSeconds(5f);
                 break;
@@ -137,6 +138,16 @@ public class MenhirStone : MonoBehaviour
 
         playerMaterial.SetFloat("_Metallic", 0.0f);
         life.mode = true;
+    }
+    IEnumerator GodModeText()
+    {
+        buffText.GetComponent<Text>().text = "당신에게 무적의 축복이 내립니다...";
+        buffText.SetActive(true);
+
+        yield return new WaitForSeconds(3.5f);
+
+        buffText.GetComponent<Text>().text = "";
+        buffText.SetActive(false);
     }
     IEnumerator SpeedUp(Collision c)
     {
